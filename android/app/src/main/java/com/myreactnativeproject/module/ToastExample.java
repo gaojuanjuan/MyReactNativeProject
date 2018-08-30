@@ -78,6 +78,7 @@ public class ToastExample extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void testAndroidCallbackMethod(String msg,Callback callback){
+        
         Toast.makeText(getReactApplicationContext(), msg, Toast.LENGTH_LONG).show();
         callback.invoke("abc");
     }
