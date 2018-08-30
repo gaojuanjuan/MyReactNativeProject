@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyReactNativeProject</string>
+    <string name="communication">Android与React Native之间的通信</string>
+</resources>
