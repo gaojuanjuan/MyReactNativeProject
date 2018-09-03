@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">MyReactNativeProject</string>
+    <string name="app_name">RN的学习</string>
     <string name="communication">Android与React Native之间的通信</string>
+    <string name="props">使用Props来定制你的组件</string>
 </resources>

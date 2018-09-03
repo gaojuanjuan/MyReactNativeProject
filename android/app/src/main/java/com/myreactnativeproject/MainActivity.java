@@ -14,7 +14,7 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity implements ItemAdapter.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements ItemAdapter.OnItemClickListener {
 
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
@@ -29,6 +29,7 @@ public class HomeActivity extends AppCompatActivity implements ItemAdapter.OnIte
         mAllFeatures = getResources().getStringArray(R.array.all_features);
 
         map.put(getResources().getString(R.string.communication), CommunicationActivity.class);
+        map.put(getResources().getString(R.string.props), CommunicationActivity.class);
 
 
 

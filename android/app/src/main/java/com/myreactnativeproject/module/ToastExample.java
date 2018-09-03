@@ -62,7 +62,7 @@ public class ToastExample extends ReactContextBaseJavaModule {
         Map<String,Object> constans = new HashMap<>();
         constans.put(LONG_TIME, Toast.LENGTH_LONG);
         constans.put(SHORT_TIME, Toast.LENGTH_SHORT);
-        constans.put(MESSAGE, "getConstants");
+        constans.put(MESSAGE, "这是MESSAGE的值");
         return constans;
     }
 
@@ -74,6 +74,12 @@ public class ToastExample extends ReactContextBaseJavaModule {
     @ReactMethod
     public void sendEvent(){
         onScanningResult();
+    }
+
+    private void onScanningResult() {
+        WritableMap params = Arguments.createMap();
+        params.putString("Key","myData");
+        sendEvent(getReactApplicationContext(),"EventName",params);
     }
 
     @ReactMethod
@@ -89,11 +95,7 @@ public class ToastExample extends ReactContextBaseJavaModule {
         String result = "高娟娟";
         promise.resolve(result);
     }
-    private void onScanningResult() {
-        WritableMap params = Arguments.createMap();
-        params.putString("Key","myData");
-        sendEvent(getReactApplicationContext(),"EventName",params);
-    }
+
 
     private void sendEvent(ReactApplicationContext reactContext, String eventName, WritableMap params) {
         reactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit(eventName,params);
